@@ -1,0 +1,11 @@
+"""WATER LEVEL MONITORING SYSTEM""" 
+from gpio import * #provides the analogRead and digitalWrite method 
+from time import * #provides the sleep method 
+
+
+while True: 
+	water_level=analogRead(A0)#reads the analog input from the water sensor at pin A0 
+	if water_level<400: 
+		digitalWrite(A1,HIGH)#starts the motor at pin A1 else: 
+digitalWrite(A1,LOW)#stops the motor at pin A1 
+sleep(0.3)
